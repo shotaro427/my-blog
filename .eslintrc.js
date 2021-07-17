@@ -24,5 +24,6 @@ module.exports = {
     'prettier/prettier': ['error'],
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+    'import/extensions': 'off'
   },
 };

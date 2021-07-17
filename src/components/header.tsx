@@ -1,41 +1,35 @@
+import { navigate } from 'gatsby';
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Button } from 'ui-neumorphism';
+import 'ui-neumorphism/dist/index.css';
 
 type Props = {
   siteTitle: string;
 };
 
-const Header: React.FC<Props> = ({ siteTitle }: Props) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+const Header: React.FC<Props> = () => {
+  const onClick = (): void => {
+    navigate('/');
+  };
+  return (
+    <header
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        marginBottom: `1.45rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-);
-
-Header.defaultProps = {
-  siteTitle: ``,
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
+        }}
+      >
+        <Button size="large" onClick={onClick} rounded bordered>
+          TOP
+        </Button>
+      </div>
+    </header>
+  );
 };
 
 export default Header;
