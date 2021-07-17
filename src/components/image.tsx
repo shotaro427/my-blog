@@ -19,12 +19,21 @@ const Image: React.FC = () => {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+            aspectRatio
+            src
+            srcSet
+            sizes
+            base64
+            tracedSVG
+            srcWebp
+            srcSetWebp
           }
         }
       }
     }
   `);
+
+  console.log('imaged', data);
 
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
