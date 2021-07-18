@@ -8,9 +8,6 @@ type Props = {
 };
 
 const Header: React.FC<Props> = () => {
-  const onClick = (): void => {
-    navigate('/');
-  };
   return (
     <header
       style={{
@@ -22,11 +19,20 @@ const Header: React.FC<Props> = () => {
           margin: `0 auto`,
           maxWidth: 960,
           padding: `1.45rem 1.0875rem`,
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
-        <Button size="large" onClick={onClick} rounded bordered>
+        {/* eslint-disable-next-line */}
+        <Button size="large" onClick={() => navigate('/')} rounded bordered>
           TOP
         </Button>
+        <div>
+          {/* eslint-disable-next-line */}
+          <Button size="large" onClick={() => navigate('/blog')} rounded bordered>
+            Blog
+          </Button>
+        </div>
       </div>
     </header>
   );

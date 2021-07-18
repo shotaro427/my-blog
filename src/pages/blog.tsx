@@ -20,7 +20,6 @@ const BlogPosts: React.FC<Props> = ({ data }: Props) => {
   return (
     <Layout>
       <SEO title="Blog Posts" />
-      <h1>Blog Posts (source: Contentful)</h1>
       {documents.map((node) => {
         return (
           <div key={node.id}>

@@ -33,8 +33,6 @@ const Image: React.FC = () => {
     }
   `);
 
-  console.log('imaged', data);
-
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
 
